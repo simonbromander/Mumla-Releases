@@ -10,11 +10,11 @@ for macOS 14 or later, on Apple silicon and Intel.
    older copy. Do not run multiple copies at once.
 3. Launch Mumla. Grant Microphone, Input Monitoring, and Accessibility in
    System Settings when needed.
-4. From build 33 onward, choose **Check for Updates** in Mumla's menu or Settings
+4. From build 35 onward, choose **Check for Updates** in Mumla's menu or Settings
    to install future betas without replacing the app manually.
 
-The first updater-enabled build requires one manual installation. Subsequent
-updates preserve local history, dictionary, settings, and downloaded models.
+The first updater-enabled build requires one manual installation. The updater
+does not migrate local history, dictionary, settings, or downloaded models.
 Updates do not change macOS privacy permissions or bypass system security.
 
 Updates are checked only when requested. There is no analytics or system
@@ -26,5 +26,6 @@ source repository remains private. iOS and sandboxed Mac TestFlight builds use
 TestFlight instead of this update feed.
 
 **Beta status:** actual hotkey and cross-app paste acceptance depends on the
-target Mac and its permissions. Signing and update installation checks are not
-proof that every editor supports paste.
+target Mac and its permissions. Downloads and signatures have been verified;
+live update installation/relaunch and populated-data preservation still need
+acceptance. These checks are not proof that every editor supports paste.
