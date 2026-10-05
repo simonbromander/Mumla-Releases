@@ -1,8 +1,52 @@
-<?xml version="1.0" standalone="yes"?><!-- sparkle-sign-warning:
+<?xml version="1.0" standalone="yes"?>
+<!-- sparkle-sign-warning:
 IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
---><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+-->
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <title>Mumla</title>
+        <item>
+            <title>1.0.1</title>
+            <pubDate>Mon, 05 Oct 2026 15:17:30 +0200</pubDate>
+            <link>https://github.com/simonbromander/Mumla-Releases</link>
+            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-36</sparkle:fullReleaseNotesLink>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:version>36</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# Mumla Mac Beta 1.0.1 (36)
+
+- Choose System, Light or Dark in Settings or directly from the menu bar's
+  Appearance menu. The selection is saved on this Mac.
+- Light uses off-white surfaces, graphite type and orange tactile keys. Dark
+  keeps the graphite recorder. System follows macOS, including automatic changes.
+- The same choice applies to the main window, sheets and floating recorder or
+  transcript pill, without changing dictation, hotkeys or auto-paste behavior.
+- New Rams-inspired icon: off-white recorder face, charcoal waveform and an
+  orange record key.
+
+## Installation
+
+In direct Mac build 35 or later, choose Check for Updates from Mumla's menu or
+Settings. Otherwise quit older Mumla copies, unzip the download and move Mumla
+to Applications, replacing the previous copy. Do not run multiple copies.
+
+Requires macOS 14 or later; Apple silicon and Intel are supported. Signing team
+and app identity are unchanged. Local history, dictionary and downloaded models
+are not migrated. Existing microphone, Input Monitoring and Accessibility
+permissions remain necessary; this update does not bypass macOS security.
+
+## What to Check
+
+Switch between all three appearances, close and reopen Mumla, then dictate
+with another editor focused. Check both the recording pill and the manual-copy
+fallback. A confirmed auto-paste should still dismiss the pill.
+
+This is a beta. Automated tests and notarization do not establish physical
+hotkey, target-editor paste or live updater/relaunch acceptance on your Mac.
+]]></description>
+            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-36/Mumla-1.0.1-36.zip" length="22949303" type="application/octet-stream" sparkle:edSignature="YX2aQvu5hVZhZ+nPJYoomuZbq0EPfqdhq53g9FqfjSaCVCb3+/YkusMzZmIVpjAmeHw6TnpmM0fKk1J2CtXZBQ=="/>
+        </item>
         <item>
             <title>1.0.1</title>
             <pubDate>Mon, 05 Oct 2026 09:45:54 +0200</pubDate>
@@ -51,10 +95,11 @@ repository remains private. App identity and signing team are unchanged.
 This is a beta. Passing simulated tests, signature checks, and notarization do
 not prove hardware hotkey or target-app paste behavior on the user's Mac.
 ]]></description>
-            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-35/Mumla-1.0.1-35.zip" length="23594069" type="application/octet-stream" sparkle:edSignature="Oay8UJFThovQcNK8YIAmwZZQetEFyKfpIdPVTrpjx/hl5y+4PIQ07tCiGOTtTHIKkBTWiIqvFvT//vxWe1H8CQ=="></enclosure>
+            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-35/Mumla-1.0.1-35.zip" length="23594069" type="application/octet-stream" sparkle:edSignature="Oay8UJFThovQcNK8YIAmwZZQetEFyKfpIdPVTrpjx/hl5y+4PIQ07tCiGOTtTHIKkBTWiIqvFvT//vxWe1H8CQ=="/>
         </item>
     </channel>
-</rss><!-- sparkle-signatures:
-edSignature: RbeItloqrUeZW+xVV8lDYGztUXHKrKCRzzf85jr8y60gn6VXApBxup1RzipLlARqlZ1jzoKZvSJDWGARP+SbDQ==
-length: 3601
+</rss>
+<!-- sparkle-signatures:
+edSignature: jgliQTD0/fk7AC86fNUunn7XSLdaNHB2ybRNc3H4pXZL2mUgOc0KJKqUyXTbIYteUbAqWjO/wdIY/wI8X9eiDw==
+length: 6091
 -->
