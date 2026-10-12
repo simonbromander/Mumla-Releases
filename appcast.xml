@@ -7,6 +7,61 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <title>Mumla</title>
         <item>
             <title>1.0.1</title>
+            <pubDate>Mon, 12 Oct 2026 12:20:49 +0200</pubDate>
+            <link>https://github.com/simonbromander/Mumla-Releases</link>
+            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-39</sparkle:fullReleaseNotesLink>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:version>39</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (39) - Chromium Paste Confirmation Beta
+
+## Fixed
+
+- Recognize successful auto-pastes into empty Chromium/Electron rich-text
+  fields that report their initial text as a newline. Previously the text
+  could be inserted while Mumla still showed the copy fallback.
+- Once the complete inserted text is confirmed, the bottom recorder dismisses
+  and the original clipboard is restored. Unchanged fields, partial text and
+  unrelated changes are not accepted as successful pastes.
+- Thanks to @ehsanYazdani for
+  [PR #2](https://github.com/simonbromander/Mumla/pull/2).
+
+Includes build 38's Show Copy dialog setting: turn it off to copy blocked or
+unconfirmed dictations to the clipboard without showing a copy panel. Newer
+user copies are protected. There is no automatic paste retry. History, Paste
+Last Transcript and Recent Transcripts remain the recovery paths.
+
+Local formatting, summary previews and style preferences from build 37 remain
+experimental. They require a compatible Mac with macOS 26 and Apple
+Intelligence enabled and ready. Review generated previews before using them.
+
+## Install
+
+Choose Check for Updates in the direct Mac app, or download this release's
+notarized ZIP, quit Mumla and replace the copy in Applications. Keep Microphone,
+Input Monitoring and Accessibility permissions enabled. Do not run direct and
+TestFlight copies simultaneously.
+
+This is a direct Mac beta for macOS 14 or later, on Apple silicon and Intel.
+iOS and the sandboxed Mac TestFlight build are unchanged by this release.
+The app source is public under MIT; model and library licenses remain separate.
+
+## Testing
+
+Try an empty message field and a field with existing text in your actual
+Chromium/Electron app. After a successful paste, check that the bottom bar
+disappears, the text appears once and the prior clipboard is restored. Also
+check blocked paste, secure input, changed focus and newer clipboard copies.
+
+Automated verification does not establish real target-app acceptance, physical
+hotkey delivery, live update installation or Swedish model quality. Swedish
+dictation only; English ASR, meetings and iCloud sync are not implemented.
+]]></description>
+            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-39/Mumla-1.0.1-39.zip" length="23214128" type="application/octet-stream" sparkle:edSignature="o4osOa8xSYcDm2hpuSrtwkIWAfETxdmXkEzr65YXZGNgNdxRqDoZlyVMeNX+dYImbruUh6xbpDYh8QjMZLxsCA=="/>
+        </item>
+        <item>
+            <title>1.0.1</title>
             <pubDate>Mon, 12 Oct 2026 08:59:30 +0200</pubDate>
             <link>https://github.com/simonbromander/Mumla-Releases</link>
             <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-38</sparkle:fullReleaseNotesLink>
@@ -104,51 +159,9 @@ actual editor, then try Paste Last Transcript from the menu. This remains a beta
 ]]></description>
             <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-37/Mumla-1.0.1-37.zip" length="23202334" type="application/octet-stream" sparkle:edSignature="3z1HV35Y+pQ4DFAQBLDL2SGU8B9PN6nvCRlNf1VMtuKViwUjUmKmKuwo8fgcpHF6tpbzVyzLDA9fyWTazYeLCw=="/>
         </item>
-        <item>
-            <title>1.0.1</title>
-            <pubDate>Mon, 05 Oct 2026 15:17:30 +0200</pubDate>
-            <link>https://github.com/simonbromander/Mumla-Releases</link>
-            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-36</sparkle:fullReleaseNotesLink>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:version>36</sparkle:version>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# Mumla Mac Beta 1.0.1 (36)
-
-- Choose System, Light or Dark in Settings or directly from the menu bar's
-  Appearance menu. The selection is saved on this Mac.
-- Light uses off-white surfaces, graphite type and orange tactile keys. Dark
-  keeps the graphite recorder. System follows macOS, including automatic changes.
-- The same choice applies to the main window, sheets and floating recorder or
-  transcript pill, without changing dictation, hotkeys or auto-paste behavior.
-- New Rams-inspired icon: off-white recorder face, charcoal waveform and an
-  orange record key.
-
-## Installation
-
-In direct Mac build 35 or later, choose Check for Updates from Mumla's menu or
-Settings. Otherwise quit older Mumla copies, unzip the download and move Mumla
-to Applications, replacing the previous copy. Do not run multiple copies.
-
-Requires macOS 14 or later; Apple silicon and Intel are supported. Signing team
-and app identity are unchanged. Local history, dictionary and downloaded models
-are not migrated. Existing microphone, Input Monitoring and Accessibility
-permissions remain necessary; this update does not bypass macOS security.
-
-## What to Check
-
-Switch between all three appearances, close and reopen Mumla, then dictate
-with another editor focused. Check both the recording pill and the manual-copy
-fallback. A confirmed auto-paste should still dismiss the pill.
-
-This is a beta. Automated tests and notarization do not establish physical
-hotkey, target-editor paste or live updater/relaunch acceptance on your Mac.
-]]></description>
-            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-36/Mumla-1.0.1-36.zip" length="22949303" type="application/octet-stream" sparkle:edSignature="YX2aQvu5hVZhZ+nPJYoomuZbq0EPfqdhq53g9FqfjSaCVCb3+/YkusMzZmIVpjAmeHw6TnpmM0fKk1J2CtXZBQ=="/>
-        </item>
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: jJDCGjSrviAIl+AUVqSjBhgHv1X5pzRY7QjIW4gIWYDgDCRPDX7jBh69FLnfFnAyy3867Hk0dXkcj5BOiHvGCw==
-length: 8913
+edSignature: CrZOkP8O8wZm8LApDmwEF7H9PfGN0jDBl3DWecfEYHjL9926UjVwamtxDYT41Fg7FnTzQ7uMGt/XG2DcPfCcCQ==
+length: 9559
 -->

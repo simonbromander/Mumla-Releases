@@ -22,7 +22,8 @@ profiling. Only public release metadata and the app download are requested;
 audio and transcripts are never included in update requests.
 
 This repository contains release metadata and signed downloads only. The app's
-source repository remains private. iOS and sandboxed Mac TestFlight builds use
+source is [open under MIT](https://github.com/simonbromander/Mumla); models and
+libraries have separate licenses. iOS and sandboxed Mac TestFlight builds use
 TestFlight instead of this update feed.
 
 **Beta status:** actual hotkey and cross-app paste acceptance depends on the
