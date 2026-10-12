@@ -7,6 +7,56 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <title>Mumla</title>
         <item>
             <title>1.0.1</title>
+            <pubDate>Mon, 12 Oct 2026 08:59:30 +0200</pubDate>
+            <link>https://github.com/simonbromander/Mumla-Releases</link>
+            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-38</sparkle:fullReleaseNotesLink>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:version>38</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (38) - Silent Clipboard Fallback Beta
+
+## New
+
+- Mac Settings > Show Copy dialog can now be switched off. Failed, blocked or
+  unverified auto-pastes then copy the transcript to the clipboard and dismiss
+  the bottom recorder, without a transcript/copy dialog. Paste manually with Cmd+V.
+- Successful auto-pastes still restore the original clipboard and hide the bar.
+  There is no automatic retry that could duplicate text.
+- A newer clipboard copy made during or after insertion is protected. If Mumla
+  cannot safely copy, the transcript remains in History and the menu-bar status
+  says why. Paste Last Transcript and Recent Transcripts remain available.
+- Switching the setting off also copies and dismisses an already-open fallback.
+  The setting is saved locally and existing users keep the dialog-enabled default.
+
+Includes build 37's local formatting and separate summary previews, editable
+style preferences, and recent-transcript menu. Apple Intelligence features need
+a compatible Mac with macOS 26 and Apple Intelligence enabled and ready. Their
+real Swedish output quality is still experimental; review previews before use.
+
+## Install
+
+Use Check for Updates in the direct Mac app, or download the notarized ZIP from
+this release, quit Mumla and replace the copy in Applications. In Mac Settings,
+switch off Show Copy dialog / Visa kopieringsruta to enable silent fallback.
+
+Keep Microphone, Input Monitoring and Accessibility permissions enabled. Do not
+run the direct and TestFlight copies simultaneously. Dictation supports macOS 14
+or later. iOS and the sandboxed Mac TestFlight build are unchanged by this release.
+
+## Testing
+
+Check successful paste, failed paste, no focused field, secure input, and clipboard
+restoration in your actual editor. Confirm no copy dialog appears with the setting
+off and the transcript is available for manual pasting or in History. Automated
+tests do not establish physical hotkey, target-app or model-quality acceptance.
+
+Swedish dictation only. Meetings, English ASR and iCloud sync are not implemented.
+]]></description>
+            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-38/Mumla-1.0.1-38.zip" length="23213886" type="application/octet-stream" sparkle:edSignature="iADw6imp1sek9r/ejn9/kRlo3q90X8qrX1VntPyavzizbHbFk36KMsxA20Hkb/9y+3YUvtxPQVVwmNcq2kIwBg=="/>
+        </item>
+        <item>
+            <title>1.0.1</title>
             <pubDate>Thu, 08 Oct 2026 10:36:32 +0200</pubDate>
             <link>https://github.com/simonbromander/Mumla-Releases</link>
             <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-37</sparkle:fullReleaseNotesLink>
@@ -96,59 +146,9 @@ hotkey, target-editor paste or live updater/relaunch acceptance on your Mac.
 ]]></description>
             <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-36/Mumla-1.0.1-36.zip" length="22949303" type="application/octet-stream" sparkle:edSignature="YX2aQvu5hVZhZ+nPJYoomuZbq0EPfqdhq53g9FqfjSaCVCb3+/YkusMzZmIVpjAmeHw6TnpmM0fKk1J2CtXZBQ=="/>
         </item>
-        <item>
-            <title>1.0.1</title>
-            <pubDate>Mon, 05 Oct 2026 09:45:54 +0200</pubDate>
-            <link>https://github.com/simonbromander/Mumla-Releases</link>
-            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-35</sparkle:fullReleaseNotesLink>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:version>35</sparkle:version>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# Mumla Mac Beta 1.0.1 (35)
-
-- Settings is now directly available from the menu bar and opens the correct tab.
-- The dictation key also works through a local AppKit listener while Mumla has
-  focus. This does not claim global keyboard access: Input Monitoring is still
-  required in other apps, and Secure Input continues to block recording.
-- A hold timer that fires slightly early is rescheduled instead of dropping
-  the hold. Local/global delivery is deduplicated to avoid false double-taps.
-- Settings shows the last trigger stage and lets you copy a small diagnostic
-  containing permissions, configured key, microphone, and model availability.
-  No typed words, audio, transcripts, or dictionary contents are included.
-- Check for Updates installs signed, notarized Mac betas from inside Mumla.
-  No background update checks, analytics, or silent installation.
-- Updates wait for recording, transcription, pasting, and model installation
-  to finish. Existing local data and downloaded models are not migrated.
-
-## Installation
-
-Quit all older Mumla copies, unzip the download, and move Mumla to Applications,
-replacing the older copy. This is the one manual install needed to get the
-updater. Future direct Mac updates can be installed through Check for Updates.
-
-Requires macOS 14 or later; Apple silicon and Intel are supported. The source
-repository remains private. App identity and signing team are unchanged.
-
-## Hotkey Check
-
-1. From Mumla's menu choose Settings, then select Ctrl, Right Option, or Fn.
-2. Use Keyboard access to grant Input Monitoring. macOS may require quitting
-   and reopening after a permission change. Accessibility is separately needed
-   for cross-app paste. Download the Swedish model if not yet installed.
-3. Hold the selected key with Mumla focused, then repeat with TextEdit focused
-   and Mumla's menu closed. Normal Ctrl shortcuts must still cancel dictation.
-4. If it fails, copy the diagnostic from the icon beside Keyboard access and
-   report it together with the app that had focus.
-
-This is a beta. Passing simulated tests, signature checks, and notarization do
-not prove hardware hotkey or target-app paste behavior on the user's Mac.
-]]></description>
-            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-35/Mumla-1.0.1-35.zip" length="23594069" type="application/octet-stream" sparkle:edSignature="Oay8UJFThovQcNK8YIAmwZZQetEFyKfpIdPVTrpjx/hl5y+4PIQ07tCiGOTtTHIKkBTWiIqvFvT//vxWe1H8CQ=="/>
-        </item>
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: kRwXU5kuM1AAw1/g4hLjnUP+bEDIHy0mO+Auu1A34F59qAXIijqpD225JuxpW1GqrXDLoSMmDwW11xW6aw/yCw==
-length: 9020
+edSignature: jJDCGjSrviAIl+AUVqSjBhgHv1X5pzRY7QjIW4gIWYDgDCRPDX7jBh69FLnfFnAyy3867Hk0dXkcj5BOiHvGCw==
+length: 8913
 -->
