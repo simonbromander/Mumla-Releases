@@ -7,6 +7,71 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <title>Mumla</title>
         <item>
             <title>1.0.1</title>
+            <pubDate>Wed, 14 Oct 2026 11:17:26 +0200</pubDate>
+            <link>https://github.com/simonbromander/Mumla-Releases</link>
+            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-40</sparkle:fullReleaseNotesLink>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:version>40</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (40) - Microphone and Reliability Beta
+
+## New And Fixed
+
+- Fix a crash when reopening Mumla's main window or Settings after closing
+  the window. The menu-bar app keeps its window alive for reuse.
+- Choose a dictation microphone in Settings or the menu bar. Mumla remembers
+  the choice instead of following system input changes when connecting devices
+  such as AirPods. The system-wide default microphone is not changed.
+- If the remembered microphone is disconnected or cannot start, dictation
+  falls back to the system default. A disconnected choice stays visible;
+  reconnecting the remembered device lets Mumla use it again.
+- Show a short explanation when Secure Input blocks the dictation trigger,
+  instead of leaving a key press unexplained. Secure Input remains respected;
+  the warning does not enable recording or read protected fields.
+- Thanks to @ehsanYazdani for
+  [PR #3](https://github.com/simonbromander/Mumla/pull/3),
+  [PR #4](https://github.com/simonbromander/Mumla/pull/4) and
+  [PR #5](https://github.com/simonbromander/Mumla/pull/5).
+
+Includes build 39's Chromium/Electron empty-editor paste confirmation fix.
+Confirmed pastes restore the previous clipboard and dismiss the recorder.
+Turn off Show Copy dialog in Mac Settings for silent clipboard fallback when
+paste cannot be confirmed. History and the recent-transcript menu remain
+available, with no automatic paste retry.
+
+Local formatting, summary previews and style preferences remain experimental.
+They require a compatible Mac with macOS 26 and Apple Intelligence enabled
+and ready. Review generated previews before using them.
+
+## Install
+
+Choose Check for Updates in the direct Mac app, or download this release's
+notarized ZIP, quit Mumla and replace the copy in Applications. Keep Microphone,
+Input Monitoring and Accessibility permissions enabled. Do not run direct and
+TestFlight copies simultaneously.
+
+This is a direct Mac beta for macOS 14 or later, on Apple silicon and Intel.
+iOS and the sandboxed Mac TestFlight build are unchanged by this release.
+The app source is public under MIT; model and library licenses remain separate.
+
+## Testing
+
+Close and reopen the main window and Settings from the menu bar. Try a pinned
+microphone, a different system default, disconnection and reconnection, and
+System Default mode. Verify recording level and the resulting transcript.
+While Secure Input is active, confirm that a trigger press explains the block
+without recording; normal dictation should resume after Secure Input ends.
+Also check paste, clipboard restoration and newer copies in your actual editor.
+
+Automated verification does not establish physical microphone routing, hotkey
+delivery, target-app paste, live update installation or Swedish model quality.
+Swedish dictation only; English ASR, meetings and iCloud sync are not implemented.
+]]></description>
+            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-40/Mumla-1.0.1-40.zip" length="23262081" type="application/octet-stream" sparkle:edSignature="O/S0Lwp/TJ17bVW/gX9bu7cTnkJVD11qjwO02alNw5reWjEfaICXbqmv2rlrTpWagnDRG1pvWY89Y4viRcFbAQ=="/>
+        </item>
+        <item>
+            <title>1.0.1</title>
             <pubDate>Mon, 12 Oct 2026 12:20:49 +0200</pubDate>
             <link>https://github.com/simonbromander/Mumla-Releases</link>
             <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-39</sparkle:fullReleaseNotesLink>
@@ -110,58 +175,9 @@ Swedish dictation only. Meetings, English ASR and iCloud sync are not implemente
 ]]></description>
             <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-38/Mumla-1.0.1-38.zip" length="23213886" type="application/octet-stream" sparkle:edSignature="iADw6imp1sek9r/ejn9/kRlo3q90X8qrX1VntPyavzizbHbFk36KMsxA20Hkb/9y+3YUvtxPQVVwmNcq2kIwBg=="/>
         </item>
-        <item>
-            <title>1.0.1</title>
-            <pubDate>Thu, 08 Oct 2026 10:36:32 +0200</pubDate>
-            <link>https://github.com/simonbromander/Mumla-Releases</link>
-            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-37</sparkle:fullReleaseNotesLink>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:version>37</sparkle:version>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (37) - Local Text Beta
-
-## New
-
-- Optional on-device formatting in transcript details: preview punctuation,
-  capitalization and paragraphs, accept explicitly, or restore the original.
-- Optional Summary preview, saved separately from the transcript. Copy and
-  share a saved summary without replacing or pasting over the original text.
-- Settings > Text preferences: local formatting and summary style prompts,
-  with Save, Cancel and Reset. Formatting still preserves every original word.
-- Confirmed auto-pastes dismiss the floating bar. Readable editors with delayed
-  acknowledgement get a brief observation-only recheck, never a duplicate paste.
-- Menu-bar Paste Last Transcript and the ten newest Recent Transcripts.
-
-## Requirements and Limitations
-
-Formatting and summaries require macOS 26 and a compatible Mac with Apple
-Intelligence enabled and ready. Dictation still supports macOS 14 or later.
-There is no cloud fallback or additional downloaded text model. Formatting is
-limited to 1,500 characters; summary input to 6,000. Nothing is silently truncated.
-
-Review summary suggestions before accepting, especially names, dates, quantities
-and commitments. Swedish summary quality is still experimental. These actions
-do not run in the dictation hotkey path. Failed or unverifiable pastes retain
-the manual Copy fallback. Unit tests do not prove physical cross-app behavior.
-
-Swedish dictation only. Meetings, English ASR and iCloud sync are not implemented.
-
-## Install
-
-Use Check for Updates in the existing direct Mac app, or download the notarized
-ZIP from this release, quit Mumla and replace the copy in Applications.
-Keep Microphone, Input Monitoring and Accessibility permissions enabled.
-Do not run the TestFlight and direct copies at the same time.
-
-Please test hotkey release, clipboard restoration and bar dismissal in your
-actual editor, then try Paste Last Transcript from the menu. This remains a beta.
-]]></description>
-            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-37/Mumla-1.0.1-37.zip" length="23202334" type="application/octet-stream" sparkle:edSignature="3z1HV35Y+pQ4DFAQBLDL2SGU8B9PN6nvCRlNf1VMtuKViwUjUmKmKuwo8fgcpHF6tpbzVyzLDA9fyWTazYeLCw=="/>
-        </item>
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: CrZOkP8O8wZm8LApDmwEF7H9PfGN0jDBl3DWecfEYHjL9926UjVwamtxDYT41Fg7FnTzQ7uMGt/XG2DcPfCcCQ==
-length: 9559
+edSignature: wCEODuopsJ7D7NvVpOd0OkDSSZitykr4xj7nP0MwTcZG4AYQluOZ2l9GuS6ynOJLPqm+0UIblvP7+Xjhyxi8AA==
+length: 10471
 -->
