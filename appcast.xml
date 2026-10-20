@@ -7,6 +7,67 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <title>Mumla</title>
         <item>
             <title>1.0.1</title>
+            <pubDate>Tue, 20 Oct 2026 19:54:27 +0200</pubDate>
+            <link>https://github.com/simonbromander/Mumla-Releases</link>
+            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-41</sparkle:fullReleaseNotesLink>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:version>41</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (41) - Local Qwen and Compact Controls Beta
+
+## New And Fixed
+
+- Optional formatting and summary previews now use Qwen3.5 4B locally through
+  MLX on Apple silicon, without requiring Apple Intelligence or macOS 26.
+  Download the verified 3.1 GB model in Settings before use. It can retain
+  about 3 GB of memory after first use. Intel Macs cannot run this text model.
+- Add context to a text preview and regenerate it before accepting. Changing
+  context invalidates the old suggestion. Formatting still requires approval;
+  summaries remain separate from the original transcript. Nothing generates
+  automatically in the hotkey path and there is no cloud fallback.
+- More compact, translucent recorder and transcript controls, with matching
+  light/dark styling and accessible actions.
+- Recording opens an available pinned microphone directly, without first
+  opening the system-default input. This avoids unnecessarily switching
+  Bluetooth headphone playback into its lower-quality microphone mode when
+  recording from another microphone. An unavailable pinned device still
+  falls back to the system default.
+  Thanks to @ehsanYazdani for
+  [PR #6](https://github.com/simonbromander/Mumla/pull/6).
+
+Includes the existing microphone selection, Secure Input guidance, Chromium
+paste confirmation, clipboard restoration and optional silent-copy fallback.
+The Watch voice-notes companion ships in the separate iOS TestFlight beta,
+not in this Mac download.
+
+## Install
+
+Choose Check for Updates in the direct app, or download the notarized ZIP,
+quit Mumla and replace the copy in Applications. Keep Microphone, Input
+Monitoring and Accessibility enabled. Do not run direct and TestFlight copies
+simultaneously. Existing dictation models and local data are preserved.
+
+This is a direct Mac beta for macOS 14+, on Apple silicon and Intel. Optional
+Qwen text generation is Apple-silicon-only. Speech recognition remains Swedish
+only; meetings and iCloud sync are not implemented. Open-source, model and
+runtime licenses are available in About.
+
+## Testing
+
+Try the pinned-microphone workflow with Bluetooth headphones, including device
+disconnect/reconnect. Check auto-paste and clipboard restoration in your real
+editor. Test model download/cancellation, formatting and summary previews,
+context changes, acceptance and original restoration. Review generated text
+carefully: factual and Swedish-language quality remain experimental.
+
+Automated and distribution checks are not physical microphone-routing,
+hotkey/paste, live updater or general model-quality acceptance.
+]]></description>
+            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-41/Mumla-1.0.1-41.zip" length="37081738" type="application/octet-stream" sparkle:edSignature="nL4Jsp0xMBjlXdfcJleVZKEPzo9M2tu4oOvi9UY6xvJxRaETd8FwnoTu+3GMr1iuOga2rgapndYo7yk74mc5DA=="/>
+        </item>
+        <item>
+            <title>1.0.1</title>
             <pubDate>Wed, 14 Oct 2026 11:17:26 +0200</pubDate>
             <link>https://github.com/simonbromander/Mumla-Releases</link>
             <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-40</sparkle:fullReleaseNotesLink>
@@ -125,59 +186,9 @@ dictation only; English ASR, meetings and iCloud sync are not implemented.
 ]]></description>
             <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-39/Mumla-1.0.1-39.zip" length="23214128" type="application/octet-stream" sparkle:edSignature="o4osOa8xSYcDm2hpuSrtwkIWAfETxdmXkEzr65YXZGNgNdxRqDoZlyVMeNX+dYImbruUh6xbpDYh8QjMZLxsCA=="/>
         </item>
-        <item>
-            <title>1.0.1</title>
-            <pubDate>Mon, 12 Oct 2026 08:59:30 +0200</pubDate>
-            <link>https://github.com/simonbromander/Mumla-Releases</link>
-            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-38</sparkle:fullReleaseNotesLink>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:version>38</sparkle:version>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (38) - Silent Clipboard Fallback Beta
-
-## New
-
-- Mac Settings > Show Copy dialog can now be switched off. Failed, blocked or
-  unverified auto-pastes then copy the transcript to the clipboard and dismiss
-  the bottom recorder, without a transcript/copy dialog. Paste manually with Cmd+V.
-- Successful auto-pastes still restore the original clipboard and hide the bar.
-  There is no automatic retry that could duplicate text.
-- A newer clipboard copy made during or after insertion is protected. If Mumla
-  cannot safely copy, the transcript remains in History and the menu-bar status
-  says why. Paste Last Transcript and Recent Transcripts remain available.
-- Switching the setting off also copies and dismisses an already-open fallback.
-  The setting is saved locally and existing users keep the dialog-enabled default.
-
-Includes build 37's local formatting and separate summary previews, editable
-style preferences, and recent-transcript menu. Apple Intelligence features need
-a compatible Mac with macOS 26 and Apple Intelligence enabled and ready. Their
-real Swedish output quality is still experimental; review previews before use.
-
-## Install
-
-Use Check for Updates in the direct Mac app, or download the notarized ZIP from
-this release, quit Mumla and replace the copy in Applications. In Mac Settings,
-switch off Show Copy dialog / Visa kopieringsruta to enable silent fallback.
-
-Keep Microphone, Input Monitoring and Accessibility permissions enabled. Do not
-run the direct and TestFlight copies simultaneously. Dictation supports macOS 14
-or later. iOS and the sandboxed Mac TestFlight build are unchanged by this release.
-
-## Testing
-
-Check successful paste, failed paste, no focused field, secure input, and clipboard
-restoration in your actual editor. Confirm no copy dialog appears with the setting
-off and the transcript is available for manual pasting or in History. Automated
-tests do not establish physical hotkey, target-app or model-quality acceptance.
-
-Swedish dictation only. Meetings, English ASR and iCloud sync are not implemented.
-]]></description>
-            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-38/Mumla-1.0.1-38.zip" length="23213886" type="application/octet-stream" sparkle:edSignature="iADw6imp1sek9r/ejn9/kRlo3q90X8qrX1VntPyavzizbHbFk36KMsxA20Hkb/9y+3YUvtxPQVVwmNcq2kIwBg=="/>
-        </item>
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: wCEODuopsJ7D7NvVpOd0OkDSSZitykr4xj7nP0MwTcZG4AYQluOZ2l9GuS6ynOJLPqm+0UIblvP7+Xjhyxi8AA==
-length: 10471
+edSignature: N6fB4VuB0oaN4Ezv/OuxTMLc0CiV8vLH6XxzqP6DxMzi1IfXHZ6Kb1GOPTk4XS2iG/uGpFb7iPWbSC62HUqFAw==
+length: 10983
 -->
