@@ -7,6 +7,56 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <title>Mumla</title>
         <item>
             <title>1.0.1</title>
+            <pubDate>Wed, 28 Oct 2026 10:37:29 +0100</pubDate>
+            <link>https://github.com/simonbromander/Mumla-Releases</link>
+            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-42</sparkle:fullReleaseNotesLink>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:version>42</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (42) - DJI Mic Button Beta
+
+## New And Fixed
+
+- Optional native DJI Mic Mini button control. Connect the receiver by USB,
+  enable the DJI microphone button in Settings and allow Input Monitoring.
+  A short button press starts hands-free dictation; another press finishes
+  it using Mumla's existing transcription and paste workflow.
+- The listener ignores other devices, duplicate reports and reported pairing
+  holds. It pauses across sleep and handles receiver disconnection. If the
+  separate DJI Mic Mumla helper is running, quit it before using native control.
+- The menu-bar icon now matches Mumla's waveform and recording-button branding
+  and follows the system's light/dark menu-bar appearance.
+
+DJI control is off by default. The receiver button does not select the audio
+input: choose your microphone separately in Settings. Microphone, Secure Input,
+model readiness and paste protections still apply. Existing keyboard triggers,
+Qwen formatting and summaries, history, dictionary and appearance remain.
+
+## Install
+
+Choose Check for Updates in the direct app, or download the notarized ZIP,
+quit Mumla and replace the copy in Applications. Keep Microphone, Input
+Monitoring and Accessibility enabled. Do not run direct and TestFlight copies
+simultaneously. Existing models and local data are preserved.
+
+This is a direct Mac beta for macOS 14+, on Apple silicon and Intel. Optional
+Qwen text generation is Apple-silicon-only. Speech recognition remains Swedish
+only; meetings and iCloud sync are not implemented. No cloud transcription
+fallback. Licenses are available in About.
+
+## Testing
+
+Test short presses, start/stop, receiver disconnect/reconnect and sleep/wake
+with a real DJI Mic Mini. Check the selected audio input, hotkeys, auto-paste
+and clipboard restoration in your normal editor. Automated listener tests and
+signed distribution checks do not establish physical receiver or live updater
+acceptance. Watch voice notes ship in the separate iOS TestFlight beta.
+]]></description>
+            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-42/Mumla-1.0.1-42.zip" length="37143617" type="application/octet-stream" sparkle:edSignature="nH3P3EGOnQH5EhCgWir0ZN2BuNRRju6e+Fu9gnRc71rBaBRy3cYxVRXm5BngrzuwjTO/7KTL6HjBUy+ZO9wgBg=="/>
+        </item>
+        <item>
+            <title>1.0.1</title>
             <pubDate>Tue, 20 Oct 2026 19:54:27 +0200</pubDate>
             <link>https://github.com/simonbromander/Mumla-Releases</link>
             <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-41</sparkle:fullReleaseNotesLink>
@@ -131,64 +181,9 @@ Swedish dictation only; English ASR, meetings and iCloud sync are not implemente
 ]]></description>
             <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-40/Mumla-1.0.1-40.zip" length="23262081" type="application/octet-stream" sparkle:edSignature="O/S0Lwp/TJ17bVW/gX9bu7cTnkJVD11qjwO02alNw5reWjEfaICXbqmv2rlrTpWagnDRG1pvWY89Y4viRcFbAQ=="/>
         </item>
-        <item>
-            <title>1.0.1</title>
-            <pubDate>Mon, 12 Oct 2026 12:20:49 +0200</pubDate>
-            <link>https://github.com/simonbromander/Mumla-Releases</link>
-            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-39</sparkle:fullReleaseNotesLink>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:version>39</sparkle:version>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (39) - Chromium Paste Confirmation Beta
-
-## Fixed
-
-- Recognize successful auto-pastes into empty Chromium/Electron rich-text
-  fields that report their initial text as a newline. Previously the text
-  could be inserted while Mumla still showed the copy fallback.
-- Once the complete inserted text is confirmed, the bottom recorder dismisses
-  and the original clipboard is restored. Unchanged fields, partial text and
-  unrelated changes are not accepted as successful pastes.
-- Thanks to @ehsanYazdani for
-  [PR #2](https://github.com/simonbromander/Mumla/pull/2).
-
-Includes build 38's Show Copy dialog setting: turn it off to copy blocked or
-unconfirmed dictations to the clipboard without showing a copy panel. Newer
-user copies are protected. There is no automatic paste retry. History, Paste
-Last Transcript and Recent Transcripts remain the recovery paths.
-
-Local formatting, summary previews and style preferences from build 37 remain
-experimental. They require a compatible Mac with macOS 26 and Apple
-Intelligence enabled and ready. Review generated previews before using them.
-
-## Install
-
-Choose Check for Updates in the direct Mac app, or download this release's
-notarized ZIP, quit Mumla and replace the copy in Applications. Keep Microphone,
-Input Monitoring and Accessibility permissions enabled. Do not run direct and
-TestFlight copies simultaneously.
-
-This is a direct Mac beta for macOS 14 or later, on Apple silicon and Intel.
-iOS and the sandboxed Mac TestFlight build are unchanged by this release.
-The app source is public under MIT; model and library licenses remain separate.
-
-## Testing
-
-Try an empty message field and a field with existing text in your actual
-Chromium/Electron app. After a successful paste, check that the bottom bar
-disappears, the text appears once and the prior clipboard is restored. Also
-check blocked paste, secure input, changed focus and newer clipboard copies.
-
-Automated verification does not establish real target-app acceptance, physical
-hotkey delivery, live update installation or Swedish model quality. Swedish
-dictation only; English ASR, meetings and iCloud sync are not implemented.
-]]></description>
-            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-39/Mumla-1.0.1-39.zip" length="23214128" type="application/octet-stream" sparkle:edSignature="o4osOa8xSYcDm2hpuSrtwkIWAfETxdmXkEzr65YXZGNgNdxRqDoZlyVMeNX+dYImbruUh6xbpDYh8QjMZLxsCA=="/>
-        </item>
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: N6fB4VuB0oaN4Ezv/OuxTMLc0CiV8vLH6XxzqP6DxMzi1IfXHZ6Kb1GOPTk4XS2iG/uGpFb7iPWbSC62HUqFAw==
-length: 10983
+edSignature: ClmTER5PMMSHWCIxWUuAuGddTmlASyr5jOGv2AgWPspbX4kL/p2So4gpsiU9i4e1KaHZvjAzoB8Eo1XvbQVnDw==
+length: 10826
 -->
