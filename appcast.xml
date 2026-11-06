@@ -7,6 +7,72 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <title>Mumla</title>
         <item>
             <title>1.0.1</title>
+            <pubDate>Fri, 06 Nov 2026 15:03:19 +0100</pubDate>
+            <link>https://github.com/simonbromander/Mumla-Releases</link>
+            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-43</sparkle:fullReleaseNotesLink>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:version>43</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (43) - Minimal Dictation And Local Formatting Beta
+
+## New And Fixed
+
+- Settings now has a Format before pasting switch. When enabled, the installed
+  local Qwen text model formats new dictations before auto-paste, using your
+  saved Text preferences. Previously, preferences affected only manual previews
+  in History. The switch is off by default.
+- Formatting preserves words and their order while adjusting punctuation,
+  capitalization and paragraphs. The original is saved in History before the
+  model runs and can be restored. If the model is unavailable, fails, or changes
+  words, Mumla uses the original and shows the outcome in Settings.
+- Choose Recorder or Minimal under Settings > Dictation overlay. Minimal is a
+  small indicator with REC, a live waveform, elapsed time and stop/cancel
+  controls. Neither overlay takes focus from the app you are dictating into.
+- Formatting is cancellable. Cancelling keeps the saved original and does not
+  paste a late result. Successful auto-paste still dismisses the overlay;
+  existing copy-dialog and silent clipboard fallback settings are respected.
+- Recording startup no longer repeats the focused-field check or scans the
+  microphone list for every pinned-device recording. The overlay appears with a
+  shorter animation. The 250 ms hold-to-talk shortcut guard remains unchanged;
+  a hardware latency improvement has not yet been measured.
+- Qwen verifies downloaded files before loading, then reuses the loaded model
+  rather than checking all model files again for every request.
+
+Qwen formatting requires Apple silicon and the separate approximately 3.1 GB
+model download. It adds processing time, especially on first use. Text
+preferences control formatting, not rewriting or adding words. Summaries remain
+separate, explicit previews and are never automatically pasted.
+
+## Install
+
+Choose Check for Updates in the direct Mac app, or download the notarized ZIP,
+quit Mumla and replace the copy in Applications. Existing history, dictionary,
+settings and downloaded models are preserved. Keep Microphone, Input Monitoring
+and Accessibility enabled. Do not run direct and TestFlight copies together.
+
+This is a direct Mac beta for macOS 14+, on Apple silicon and Intel. Intel
+dictation remains supported without Qwen generation. Speech recognition remains
+Swedish-only; meetings and iCloud sync are not implemented. No cloud fallback.
+Model and library licenses are available in About.
+
+## Testing
+
+The shared/Mac regression suite completed 269 tests with zero failures and five
+optional live checks skipped. Both overlay designs were rendered and inspected
+in light and dark appearances. Synthetic integration tests cover saved prompts,
+original retention, cancellation, changed focus, clipboard restoration, failed
+history writes and dismissal after confirmed insertion.
+
+Real microphone-start timing, Swedish model quality, live update installation
+and cross-app dictation still require target-Mac acceptance. Signing and download
+verification do not establish those hardware results. iOS/TestFlight is unchanged
+by this Mac release.
+]]></description>
+            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-43/Mumla-1.0.1-43.zip" length="37192056" type="application/octet-stream" sparkle:edSignature="yJG8XJcA8xcERoUDWAlAG8e4ltx24ABKd93fbCjDdYUjAP+ZrjUHjyED0n2BxAigDnxo8hdzzwyxg29Y4b3JAg=="/>
+        </item>
+        <item>
+            <title>1.0.1</title>
             <pubDate>Wed, 28 Oct 2026 10:37:29 +0100</pubDate>
             <link>https://github.com/simonbromander/Mumla-Releases</link>
             <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-42</sparkle:fullReleaseNotesLink>
@@ -116,74 +182,9 @@ hotkey/paste, live updater or general model-quality acceptance.
 ]]></description>
             <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-41/Mumla-1.0.1-41.zip" length="37081738" type="application/octet-stream" sparkle:edSignature="nL4Jsp0xMBjlXdfcJleVZKEPzo9M2tu4oOvi9UY6xvJxRaETd8FwnoTu+3GMr1iuOga2rgapndYo7yk74mc5DA=="/>
         </item>
-        <item>
-            <title>1.0.1</title>
-            <pubDate>Wed, 14 Oct 2026 11:17:26 +0200</pubDate>
-            <link>https://github.com/simonbromander/Mumla-Releases</link>
-            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-40</sparkle:fullReleaseNotesLink>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:version>40</sparkle:version>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (40) - Microphone and Reliability Beta
-
-## New And Fixed
-
-- Fix a crash when reopening Mumla's main window or Settings after closing
-  the window. The menu-bar app keeps its window alive for reuse.
-- Choose a dictation microphone in Settings or the menu bar. Mumla remembers
-  the choice instead of following system input changes when connecting devices
-  such as AirPods. The system-wide default microphone is not changed.
-- If the remembered microphone is disconnected or cannot start, dictation
-  falls back to the system default. A disconnected choice stays visible;
-  reconnecting the remembered device lets Mumla use it again.
-- Show a short explanation when Secure Input blocks the dictation trigger,
-  instead of leaving a key press unexplained. Secure Input remains respected;
-  the warning does not enable recording or read protected fields.
-- Thanks to @ehsanYazdani for
-  [PR #3](https://github.com/simonbromander/Mumla/pull/3),
-  [PR #4](https://github.com/simonbromander/Mumla/pull/4) and
-  [PR #5](https://github.com/simonbromander/Mumla/pull/5).
-
-Includes build 39's Chromium/Electron empty-editor paste confirmation fix.
-Confirmed pastes restore the previous clipboard and dismiss the recorder.
-Turn off Show Copy dialog in Mac Settings for silent clipboard fallback when
-paste cannot be confirmed. History and the recent-transcript menu remain
-available, with no automatic paste retry.
-
-Local formatting, summary previews and style preferences remain experimental.
-They require a compatible Mac with macOS 26 and Apple Intelligence enabled
-and ready. Review generated previews before using them.
-
-## Install
-
-Choose Check for Updates in the direct Mac app, or download this release's
-notarized ZIP, quit Mumla and replace the copy in Applications. Keep Microphone,
-Input Monitoring and Accessibility permissions enabled. Do not run direct and
-TestFlight copies simultaneously.
-
-This is a direct Mac beta for macOS 14 or later, on Apple silicon and Intel.
-iOS and the sandboxed Mac TestFlight build are unchanged by this release.
-The app source is public under MIT; model and library licenses remain separate.
-
-## Testing
-
-Close and reopen the main window and Settings from the menu bar. Try a pinned
-microphone, a different system default, disconnection and reconnection, and
-System Default mode. Verify recording level and the resulting transcript.
-While Secure Input is active, confirm that a trigger press explains the block
-without recording; normal dictation should resume after Secure Input ends.
-Also check paste, clipboard restoration and newer copies in your actual editor.
-
-Automated verification does not establish physical microphone routing, hotkey
-delivery, target-app paste, live update installation or Swedish model quality.
-Swedish dictation only; English ASR, meetings and iCloud sync are not implemented.
-]]></description>
-            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-40/Mumla-1.0.1-40.zip" length="23262081" type="application/octet-stream" sparkle:edSignature="O/S0Lwp/TJ17bVW/gX9bu7cTnkJVD11qjwO02alNw5reWjEfaICXbqmv2rlrTpWagnDRG1pvWY89Y4viRcFbAQ=="/>
-        </item>
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: ClmTER5PMMSHWCIxWUuAuGddTmlASyr5jOGv2AgWPspbX4kL/p2So4gpsiU9i4e1KaHZvjAzoB8Eo1XvbQVnDw==
-length: 10826
+edSignature: 0GKAPT4BaS74HtSlGGAl8fsAX+6gmlmDSA7XolY3m0oI+4dCj8FbK+YkUv3Qc0gyQO4jLTZyPba2ionLr++yDA==
+length: 11086
 -->
