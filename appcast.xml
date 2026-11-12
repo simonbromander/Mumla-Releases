@@ -7,6 +7,81 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <title>Mumla</title>
         <item>
             <title>1.0.1</title>
+            <pubDate>Thu, 12 Nov 2026 06:41:44 +0100</pubDate>
+            <link>https://github.com/simonbromander/Mumla-Releases</link>
+            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-46</sparkle:fullReleaseNotesLink>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:version>46</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (46) - Meeting Suggestions Beta
+
+## New
+
+- Opt-in suggestions when the Slack or Microsoft Teams desktop app uses its
+  microphone. A small tactile prompt offers Start and Not now. Nothing records
+  automatically; detection itself does not open a microphone or audio tap.
+- Optional Calendar context can supply a matching ongoing or imminent meeting
+  title. Enable it separately in Settings or the meeting setup screen. Calendar
+  access is not required to detect a call or record manually. Mumla never changes
+  events or uploads calendar data.
+- Suggestions wait for sustained input activity, expire after a minute and are
+  suppressed during Mumla's other work. Brief mute/reconnect transitions do not
+  immediately trigger another prompt. Switching suggestions off stops observation.
+
+## Meeting UI Improvements
+
+- Long meeting titles, source names and speaker labels wrap. Compact windows
+  give the transcript more room, with pause/stop controls kept accessible.
+- Source, speaker and action pickers follow Mumla's tactile light/dark design.
+- Correction, deletion and quit-confirmation dialogs now match the app. Deleting
+  audio keeps the transcript; deleting a meeting still requires confirmation.
+
+Existing live local Swedish transcription, on-demand processing, speaker labels,
+playback, export, dictation hotkeys, auto-paste and minimal REC/timer mode remain
+available. Destination sending is not included in this release.
+
+## Experimental Scope And Permissions
+
+Meetings and suggestions require Apple silicon, macOS 14.2+ and the direct Mac
+build. Browser calls and calendar-only reminders are not detected. Microphone
+activity is a hint, not proof of a call: voice messages or microphone checks can
+also trigger a prompt. A muted app may not expose input activity until unmuted.
+If no prompt appears, start recording manually in Meetings.
+
+Calendar permission is optional and only requested when you enable meeting titles
+from Calendar. macOS requires full event access for this lookup, but Mumla only
+reads nearby events and never modifies them. Only a suggested title is saved with
+a recording after you choose Start. Calendar notes, attendees, links and event
+identifiers are not saved or logged.
+
+Actual recording still requires microphone and system-audio permission. Obtain
+the participants' consent before recording. Speech recognition remains Swedish
+only; speaker separation and transcript accuracy remain experimental.
+
+## Install And Test
+
+Choose Check for Updates in the direct Mac app, or quit Mumla and replace it with
+the downloaded notarized app. Existing local history, dictionary, settings and
+models are preserved. Do not run production, development and TestFlight copies
+together. Suggestions are off by default; enable Suggest meeting recording in
+Settings or the meeting setup screen.
+
+For a short consented Slack/Teams call, check that the prompt appears, Not now
+records nothing, and Start selects the correct meeting app. Check both MIC and
+APP meters and confirm both sides reach the transcript. Test optional Calendar
+access separately; a denied calendar must not prevent manual recording.
+
+Automated checks and silent UI fixtures do not prove real-call detection,
+permissions, full-screen placement, audio quality, idle cost or live updater
+replacement. Those remain target-Mac acceptance checks. This is an experimental
+prerelease, not a stable meeting-support claim. No iOS or sandboxed Mac TestFlight
+build is included.
+]]></description>
+            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-46/Mumla-1.0.1-46.zip" length="37907670" type="application/octet-stream" sparkle:edSignature="edPqWtUPvLhUOmW5FnqmLG85hDOIdcHRMKCwbtjxcW5906sO/Vmq9U8u9wSNWQwMob+jmq9eUWZskShA4sh/BQ=="/>
+        </item>
+        <item>
+            <title>1.0.1</title>
             <pubDate>Wed, 11 Nov 2026 20:23:31 +0100</pubDate>
             <link>https://github.com/simonbromander/Mumla-Releases</link>
             <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-45</sparkle:fullReleaseNotesLink>
@@ -154,75 +229,9 @@ iOS and sandboxed Mac TestFlight are unchanged by this release.
 ]]></description>
             <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-44/Mumla-1.0.1-44.zip" length="37202981" type="application/octet-stream" sparkle:edSignature="22yWEn5pj5j0eCrRHgX3EhUOEuLU5lYaKBZZP1RSxFCN3WPMarFuE8Xg8nrl65Gm2p9+dRA7dpOkoY5K3n2FBg=="/>
         </item>
-        <item>
-            <title>1.0.1</title>
-            <pubDate>Fri, 06 Nov 2026 15:03:19 +0100</pubDate>
-            <link>https://github.com/simonbromander/Mumla-Releases</link>
-            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-43</sparkle:fullReleaseNotesLink>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:version>43</sparkle:version>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (43) - Minimal Dictation And Local Formatting Beta
-
-## New And Fixed
-
-- Settings now has a Format before pasting switch. When enabled, the installed
-  local Qwen text model formats new dictations before auto-paste, using your
-  saved Text preferences. Previously, preferences affected only manual previews
-  in History. The switch is off by default.
-- Formatting preserves words and their order while adjusting punctuation,
-  capitalization and paragraphs. The original is saved in History before the
-  model runs and can be restored. If the model is unavailable, fails, or changes
-  words, Mumla uses the original and shows the outcome in Settings.
-- Choose Recorder or Minimal under Settings > Dictation overlay. Minimal is a
-  small indicator with REC, a live waveform, elapsed time and stop/cancel
-  controls. Neither overlay takes focus from the app you are dictating into.
-- Formatting is cancellable. Cancelling keeps the saved original and does not
-  paste a late result. Successful auto-paste still dismisses the overlay;
-  existing copy-dialog and silent clipboard fallback settings are respected.
-- Recording startup no longer repeats the focused-field check or scans the
-  microphone list for every pinned-device recording. The overlay appears with a
-  shorter animation. The 250 ms hold-to-talk shortcut guard remains unchanged;
-  a hardware latency improvement has not yet been measured.
-- Qwen verifies downloaded files before loading, then reuses the loaded model
-  rather than checking all model files again for every request.
-
-Qwen formatting requires Apple silicon and the separate approximately 3.1 GB
-model download. It adds processing time, especially on first use. Text
-preferences control formatting, not rewriting or adding words. Summaries remain
-separate, explicit previews and are never automatically pasted.
-
-## Install
-
-Choose Check for Updates in the direct Mac app, or download the notarized ZIP,
-quit Mumla and replace the copy in Applications. Existing history, dictionary,
-settings and downloaded models are preserved. Keep Microphone, Input Monitoring
-and Accessibility enabled. Do not run direct and TestFlight copies together.
-
-This is a direct Mac beta for macOS 14+, on Apple silicon and Intel. Intel
-dictation remains supported without Qwen generation. Speech recognition remains
-Swedish-only; meetings and iCloud sync are not implemented. No cloud fallback.
-Model and library licenses are available in About.
-
-## Testing
-
-The shared/Mac regression suite completed 269 tests with zero failures and five
-optional live checks skipped. Both overlay designs were rendered and inspected
-in light and dark appearances. Synthetic integration tests cover saved prompts,
-original retention, cancellation, changed focus, clipboard restoration, failed
-history writes and dismissal after confirmed insertion.
-
-Real microphone-start timing, Swedish model quality, live update installation
-and cross-app dictation still require target-Mac acceptance. Signing and download
-verification do not establish those hardware results. iOS/TestFlight is unchanged
-by this Mac release.
-]]></description>
-            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-43/Mumla-1.0.1-43.zip" length="37192056" type="application/octet-stream" sparkle:edSignature="yJG8XJcA8xcERoUDWAlAG8e4ltx24ABKd93fbCjDdYUjAP+ZrjUHjyED0n2BxAigDnxo8hdzzwyxg29Y4b3JAg=="/>
-        </item>
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: 5R+tG6E1jOxY8kwma0E7NuBJD91KQNbZCx008nAosE0A0ydjGIDeMjxZT/rWu0PHw9ClqAv8AXEhh9AFP7zTDA==
-length: 13965
+edSignature: R/9vJsTqneF6r0Gr7EScDnCR6SY/vWHgSOZ7SSS6Cdrn02kJpgXz6kAEVZkh9HLgnRnRtCCyAFY0jHkp8GBgCA==
+length: 14328
 -->
