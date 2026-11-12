@@ -33,6 +33,12 @@ and system-audio recording permissions, obtain participants' consent, and start
 and stop recording explicitly. Real-call audio and permission acceptance remain
 outstanding; passing release checks does not establish meeting accuracy.
 
+From build 49, unassigned system speech is labelled "Unassigned remote" rather
+than "Them". Select a passage's speaker label to assign just that passage to an
+existing speaker from the same audio source. Other passages and transcript words
+are not merged or rewritten. Existing recordings are not automatically relabelled;
+speaker-model accuracy on real group calls still needs review.
+
 **Beta status:** actual hotkey and cross-app paste acceptance depends on the
 target Mac and its permissions. Downloads and signatures have been verified;
 live update installation/relaunch and populated-data preservation still need

@@ -7,6 +7,71 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <title>Mumla</title>
         <item>
             <title>1.0.1</title>
+            <pubDate>Thu, 12 Nov 2026 14:18:33 +0100</pubDate>
+            <link>https://github.com/simonbromander/Mumla-Releases</link>
+            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-49</sparkle:fullReleaseNotesLink>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:version>49</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (49) - Meeting Speaker Alignment Beta
+
+## Changed
+
+- Live meeting speaker labels use the next available audio chunk before
+  assigning words near a chunk boundary. This fixes a reproduced timing defect
+  that could alternate one person's speech between a numbered remote speaker
+  and the unassigned audio source.
+- Speaker timing remains stable when transcription retries a chunk. Final
+  partial chunks and pause/resume drain pending speaker context without ending
+  a resumable session or adding words to the transcript.
+- Words use their duration rather than a single midpoint for speaker alignment.
+  Brief activity gaps do not unnecessarily split one voice. Overlapping voices
+  and uncertain predictions remain unassigned, not silently merged.
+- The old "Them" fallback is now "Unassigned remote". It is an audio-source
+  fallback, not an identified person. Existing custom speaker names are retained.
+- Click a passage's speaker label to assign that passage to an existing speaker
+  from the same audio source. Other passages, transcript text and timing stay
+  unchanged. Previous identities remain available to restore a correction.
+
+Existing recordings are not automatically relabelled. This fixes demonstrated
+alignment defects; it does not guarantee that the acoustic model will identify
+every person correctly in a group call.
+
+System audio + microphone remains the default, with explicit Start and Stop.
+Selected-app and microphone-only capture, pause/resume, live local Swedish
+transcription, playback/export and existing dictation/paste behavior are retained.
+No audio or text is uploaded by these changes. iOS and Mac TestFlight are unchanged.
+
+## Install And Test
+
+Choose Check for Updates in the direct Mac app, or quit Mumla and replace it with
+the downloaded notarized app. Existing history, dictionary, settings and models
+are preserved. Do not run production, development and TestFlight copies together.
+
+Meetings require Apple silicon and macOS 14.2 or later. The optional speaker
+model must be installed for automatic speaker separation. Obtain participants'
+consent. System audio includes other apps' and browser tabs' output; choose a
+specific app for narrower capture. Headphones help avoid acoustic microphone bleed.
+
+On a consented group call, check continuous speech across chunk boundaries,
+different people taking turns, returning speakers, pause/resume and the final
+words after Stop. Correct a single passage with its speaker selector, then
+confirm that other people and the words themselves are unchanged.
+
+The local Swift suite completed 355 tests with nine optional model/hardware skips
+and no failures. Coverage includes a delayed speaker stream, actual bounded
+FluidAudio timeline queries, retries, overlap, track isolation, model failure,
+old history and scoped correction safety. The native app and UI-test target
+compiled; the isolated selector was checked in compact light/dark layouts.
+Automated Mac UI-test execution, acoustic speaker quality, real-call capture,
+permissions/routing, traffic auditing and live updater replacement remain
+target-Mac acceptance checks. This remains an experimental prerelease.
+]]></description>
+            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-49/Mumla-1.0.1-49.zip" length="37960018" type="application/octet-stream" sparkle:edSignature="bt9nin9LMysDUJapm8d076A5iyy5j8yGhVPfpxqwm6az1C4lCDhW5MSXuwJ4iwgw8ERU7hEI6oq+OfX5vsIWDQ=="/>
+        </item>
+        <item>
+            <title>1.0.1</title>
             <pubDate>Thu, 12 Nov 2026 12:03:52 +0100</pubDate>
             <link>https://github.com/simonbromander/Mumla-Releases</link>
             <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-48</sparkle:fullReleaseNotesLink>
@@ -137,84 +202,9 @@ meeting-recording guarantee.
 ]]></description>
             <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-47/Mumla-1.0.1-47.zip" length="37911833" type="application/octet-stream" sparkle:edSignature="DCyG8Le4PbCyU4I5/9HBYVixlLNpdoausOcypxxzlZQpG/8TLcf0Oq/kHJqohfRzSwKhFerumBFKVa17jgOGAg=="/>
         </item>
-        <item>
-            <title>1.0.1</title>
-            <pubDate>Thu, 12 Nov 2026 06:41:44 +0100</pubDate>
-            <link>https://github.com/simonbromander/Mumla-Releases</link>
-            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-46</sparkle:fullReleaseNotesLink>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:version>46</sparkle:version>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (46) - Meeting Suggestions Beta
-
-## New
-
-- Opt-in suggestions when the Slack or Microsoft Teams desktop app uses its
-  microphone. A small tactile prompt offers Start and Not now. Nothing records
-  automatically; detection itself does not open a microphone or audio tap.
-- Optional Calendar context can supply a matching ongoing or imminent meeting
-  title. Enable it separately in Settings or the meeting setup screen. Calendar
-  access is not required to detect a call or record manually. Mumla never changes
-  events or uploads calendar data.
-- Suggestions wait for sustained input activity, expire after a minute and are
-  suppressed during Mumla's other work. Brief mute/reconnect transitions do not
-  immediately trigger another prompt. Switching suggestions off stops observation.
-
-## Meeting UI Improvements
-
-- Long meeting titles, source names and speaker labels wrap. Compact windows
-  give the transcript more room, with pause/stop controls kept accessible.
-- Source, speaker and action pickers follow Mumla's tactile light/dark design.
-- Correction, deletion and quit-confirmation dialogs now match the app. Deleting
-  audio keeps the transcript; deleting a meeting still requires confirmation.
-
-Existing live local Swedish transcription, on-demand processing, speaker labels,
-playback, export, dictation hotkeys, auto-paste and minimal REC/timer mode remain
-available. Destination sending is not included in this release.
-
-## Experimental Scope And Permissions
-
-Meetings and suggestions require Apple silicon, macOS 14.2+ and the direct Mac
-build. Browser calls and calendar-only reminders are not detected. Microphone
-activity is a hint, not proof of a call: voice messages or microphone checks can
-also trigger a prompt. A muted app may not expose input activity until unmuted.
-If no prompt appears, start recording manually in Meetings.
-
-Calendar permission is optional and only requested when you enable meeting titles
-from Calendar. macOS requires full event access for this lookup, but Mumla only
-reads nearby events and never modifies them. Only a suggested title is saved with
-a recording after you choose Start. Calendar notes, attendees, links and event
-identifiers are not saved or logged.
-
-Actual recording still requires microphone and system-audio permission. Obtain
-the participants' consent before recording. Speech recognition remains Swedish
-only; speaker separation and transcript accuracy remain experimental.
-
-## Install And Test
-
-Choose Check for Updates in the direct Mac app, or quit Mumla and replace it with
-the downloaded notarized app. Existing local history, dictionary, settings and
-models are preserved. Do not run production, development and TestFlight copies
-together. Suggestions are off by default; enable Suggest meeting recording in
-Settings or the meeting setup screen.
-
-For a short consented Slack/Teams call, check that the prompt appears, Not now
-records nothing, and Start selects the correct meeting app. Check both MIC and
-APP meters and confirm both sides reach the transcript. Test optional Calendar
-access separately; a denied calendar must not prevent manual recording.
-
-Automated checks and silent UI fixtures do not prove real-call detection,
-permissions, full-screen placement, audio quality, idle cost or live updater
-replacement. Those remain target-Mac acceptance checks. This is an experimental
-prerelease, not a stable meeting-support claim. No iOS or sandboxed Mac TestFlight
-build is included.
-]]></description>
-            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-46/Mumla-1.0.1-46.zip" length="37907670" type="application/octet-stream" sparkle:edSignature="edPqWtUPvLhUOmW5FnqmLG85hDOIdcHRMKCwbtjxcW5906sO/Vmq9U8u9wSNWQwMob+jmq9eUWZskShA4sh/BQ=="/>
-        </item>
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: 1GCvI6DdmW1Qca/jJlQPHgq4SK4n756Yi+WDj3vsH+XWt2NIaNp5uTwQWgVKICDAgpRQe/KFmuZZW+i/lWLgAA==
-length: 13088
+edSignature: G6wozbfJXVyhuot+Z1/Do5SOQl+nB2rgFtAHpcvXCyvb2WC4OWLdCRwNZtZRr3IFOKQ2T2J7zW8oKv+QQrc7Aw==
+length: 12777
 -->
