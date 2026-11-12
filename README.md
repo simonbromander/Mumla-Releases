@@ -26,6 +26,13 @@ source is [open under MIT](https://github.com/simonbromander/Mumla); models and
 libraries have separate licenses. iOS and sandboxed Mac TestFlight builds use
 TestFlight instead of this update feed.
 
+Experimental meetings require Apple silicon and macOS 14.2 or later. From build
+47, System audio + microphone is the default, including other apps' sounds.
+Choose a specific app or Microphone only for narrower capture. Allow microphone
+and system-audio recording permissions, obtain participants' consent, and start
+and stop recording explicitly. Real-call audio and permission acceptance remain
+outstanding; passing release checks does not establish meeting accuracy.
+
 **Beta status:** actual hotkey and cross-app paste acceptance depends on the
 target Mac and its permissions. Downloads and signatures have been verified;
 live update installation/relaunch and populated-data preservation still need
