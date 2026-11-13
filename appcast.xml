@@ -7,6 +7,56 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <title>Mumla</title>
         <item>
             <title>1.0.1</title>
+            <pubDate>Fri, 13 Nov 2026 07:53:15 +0100</pubDate>
+            <link>https://github.com/simonbromander/Mumla-Releases</link>
+            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-50</sparkle:fullReleaseNotesLink>
+            <sparkle:channel>beta</sparkle:channel>
+            <sparkle:version>50</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (50) - Classic and Native Styles Beta
+
+## Changed
+
+- Choose Classic or Native in Settings, independently of System, Light or Dark
+  appearance. Existing installations keep Classic by default.
+- Native uses a Mac sidebar, system typography and platform controls. Supported
+  systems use glass materials, with material fallbacks on older macOS versions.
+- The recording overlay, meeting views, settings and shared dialogs follow the
+  selected style. Switching back restores Classic's recorder and title bar.
+- Style changes do not restart recording services, clear history, change audio
+  permissions or alter transcription and text-formatting preferences.
+- Pressing the DJI mic button while an app update is being installed is now a
+  no-op, including when Secure Input is enabled. Secure Input remains protected.
+
+Existing live meetings, speaker correction, dictation and paste behavior remain.
+This release adds no cloud provider or new data-sharing feature. Models continue
+to run locally. The style preference stays on this device.
+
+## Install And Test
+
+Choose Check for Updates in the direct Mac app, or quit Mumla and replace it
+with the downloaded notarized app. History, dictionary, settings and downloaded
+models are preserved. Avoid running multiple copies of Mumla simultaneously.
+
+In Settings, switch between Classic and Native, then try System, Light and Dark.
+Check the recorder, compact overlay, meetings, history and settings. Confirm that
+the style persists after relaunch and that recordings and model preferences stay
+unchanged. Meetings still require Apple silicon and macOS 14.2 or later, and
+participants' consent.
+
+The local Swift suite passes 359 tests with nine optional model/hardware skips.
+Release-helper tests pass (35 tests, 84 assertions). Mac app and UI-test targets
+compile; isolated test-app inspection covered both styles and compact layouts.
+Automated Mac UI execution is not verified because UI Automation access was not
+granted. Physical audio capture, paste permissions/routing, older-OS materials,
+traffic auditing and live updater replacement still need target-Mac acceptance.
+This remains an experimental prerelease, not a quality guarantee for real calls.
+]]></description>
+            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-50/Mumla-1.0.1-50.zip" length="38064691" type="application/octet-stream" sparkle:edSignature="eOOJe7fZHFdMiiGWVQfIwcI/bSbdLBaTMoeRZO4RPNI6ZcT9QBjjB2vFg7nuL9ACLOt5IlSQWel3b7IqUdXqDg=="/>
+        </item>
+        <item>
+            <title>1.0.1</title>
             <pubDate>Thu, 12 Nov 2026 14:18:33 +0100</pubDate>
             <link>https://github.com/simonbromander/Mumla-Releases</link>
             <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-49</sparkle:fullReleaseNotesLink>
@@ -134,77 +184,9 @@ experimental prerelease, not a stable recording guarantee.
 ]]></description>
             <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-48/Mumla-1.0.1-48.zip" length="37920883" type="application/octet-stream" sparkle:edSignature="WiyTLrC22RU0nmtvk2O0XUxi+baKKQvXhBCjCVBW3Ei+jAQGUjxy+p6wP1C7BuSbtTOHShlBB2F3/aWw+RxqBw=="/>
         </item>
-        <item>
-            <title>1.0.1</title>
-            <pubDate>Thu, 12 Nov 2026 08:46:09 +0100</pubDate>
-            <link>https://github.com/simonbromander/Mumla-Releases</link>
-            <sparkle:fullReleaseNotesLink>https://github.com/simonbromander/Mumla-Releases/releases/tag/macos-1.0.1-47</sparkle:fullReleaseNotesLink>
-            <sparkle:channel>beta</sparkle:channel>
-            <sparkle:version>47</sparkle:version>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# Mumla for Mac 1.0.1 (47) - System Audio Meetings Beta
-
-## Changed
-
-- Meetings now default to System audio + microphone. Your microphone and the
-  Mac's output are captured on separate tracks and transcribed locally.
-- Starting from a Slack/Teams meeting suggestion uses the same default. The
-  prompt and setup screen explain that system audio includes sounds from other
-  apps and browser tabs. The macOS audio-permission description also reflects
-  this scope. Nothing records before you choose Record or Start.
-- Select a specific meeting app for narrower output capture, or Microphone only.
-  A missing selected app does not silently fall back to recording all apps.
-- Pause/resume preserves the original capture source. System-audio capture does
-  not stop merely because a particular meeting app closes. Stop and save the
-  recording explicitly when finished.
-- The recording readout shows MIC and SYS, with descriptive VoiceOver labels.
-  Transcript playback stays disabled during recording to avoid feeding it back
-  into capture.
-
-Existing dictation hotkeys, auto-paste, local formatting, minimal REC/timer mode,
-meeting suggestions, live Swedish transcription, speaker labels, corrections,
-playback after recording, export and audio retention remain available. This
-release does not include destination sending or the Native/Classic appearance
-work. iOS and sandboxed Mac TestFlight are unchanged.
-
-## Experimental Scope And Permissions
-
-Meetings require the direct Mac build, Apple silicon and macOS 14.2 or later.
-Allow microphone and system-audio recording permission. Obtain participants'
-consent and check the selected source before starting. System audio may include
-notifications, music and other apps' output; choose a specific app if needed.
-Microphone input is separate from the digital output tap; headphones help avoid
-acoustic bleed. Individual speaker recognition and echo cancellation are not
-guaranteed. Speech recognition remains Swedish-only in this meeting beta.
-
-Suggestions and Calendar context remain opt-in. Microphone activity is a hint,
-not proof of a call. No microphone or audio tap is opened for detection itself.
-Calendar data is not uploaded or changed. Audio and transcripts stay local;
-there is no cloud transcription or meeting-LLM connection.
-
-## Install And Test
-
-Choose Check for Updates in the direct Mac app, or quit Mumla and replace it with
-the downloaded notarized app. Existing history, dictionary, settings and models
-are preserved. Do not run production, development and TestFlight copies together.
-
-For a short consented call, verify System audio + microphone is selected, both
-MIC and SYS meters respond, and both sides appear in the saved transcript. Check
-pause/resume and Stop/save. Also try a specific app and Microphone only to confirm
-their narrower scopes. Recording should not require another app to already be
-playing audio. Test a detected Slack/Teams suggestion separately.
-
-Automated tests and silent UI fixtures do not establish real two-sided capture,
-permissions, routing, speaker accuracy or live updater replacement. Those remain
-target-Mac acceptance checks. This is an experimental prerelease, not a stable
-meeting-recording guarantee.
-]]></description>
-            <enclosure url="https://github.com/simonbromander/Mumla-Releases/releases/download/macos-1.0.1-47/Mumla-1.0.1-47.zip" length="37911833" type="application/octet-stream" sparkle:edSignature="DCyG8Le4PbCyU4I5/9HBYVixlLNpdoausOcypxxzlZQpG/8TLcf0Oq/kHJqohfRzSwKhFerumBFKVa17jgOGAg=="/>
-        </item>
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: G6wozbfJXVyhuot+Z1/Do5SOQl+nB2rgFtAHpcvXCyvb2WC4OWLdCRwNZtZRr3IFOKQ2T2J7zW8oKv+QQrc7Aw==
-length: 12777
+edSignature: PZxyaUEzEds2hVxe0Tje0z6Et2zZ/Kp2g9bvjD99wjzzHF83ku5E1LL+ZHvroNUqXp+aSsKcgBBVHRkEUMxaCw==
+length: 11786
 -->
