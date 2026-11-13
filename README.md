@@ -39,6 +39,12 @@ existing speaker from the same audio source. Other passages and transcript words
 are not merged or rewritten. Existing recordings are not automatically relabelled;
 speaker-model accuracy on real group calls still needs review.
 
+From build 51, Meetings opens on a dated, locally searchable library. Open one
+meeting to read its complete transcript; Copy transcript and Export remain above
+the document and always include every passage, even while viewing filtered
+results. Compact windows use All meetings to return, while wide windows retain
+the list beside the transcript. Browsing does not stop an active recording.
+
 **Beta status:** actual hotkey and cross-app paste acceptance depends on the
 target Mac and its permissions. Downloads and signatures have been verified;
 live update installation/relaunch and populated-data preservation still need
